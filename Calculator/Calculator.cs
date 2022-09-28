@@ -2,7 +2,7 @@
 
 public static class Calculator
 {
-    public static double Calculate(double value1, double value2, string mathOperator)
+    public static double Calculate(double value1, double value2,  string mathOperator)
     {
         double result = 0;
 
@@ -15,11 +15,24 @@ public static class Calculator
                 result = value1 * value2;
                 break;
             case "+":
-                result = value1 + value2;
+                result = value1 + value2 ;
                 break;
             case "-":
                 result = value1 - value2;
                 break;
+            case "√":
+                result = Math.Sqrt(value1);
+                break;
+            case "mod":
+                result = value1 % value2;
+                break;
+            case "(":
+                result = '(';
+                break;
+            case ")":
+                result = ')';
+                break;
+
         }
 
         return result;
