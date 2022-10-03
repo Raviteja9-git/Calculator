@@ -7,7 +7,21 @@ public partial class MainPage : ContentPage
     {
         InitializeComponent();
         OnClear(this, null);
+        var theme = Application.Current.RequestedTheme;
+        if (theme is AppTheme.Light)
+            lightThemeRadioButton.IsChecked = true;
+        else if (theme is AppTheme.Dark)
+            darkThemeRadioButton.IsChecked = true;
 
+    }
+    private void LightThemeRadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        Application.Current.UserAppTheme = AppTheme.Light;
+    }
+
+    private void DarkThemeRadioButton_CheckedChanged(object sender, CheckedChangedEventArgs e)
+    {
+        Application.Current.UserAppTheme = AppTheme.Dark;
     }
 
     string currentEntry = "";

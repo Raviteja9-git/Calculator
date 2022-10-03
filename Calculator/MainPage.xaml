@@ -7,6 +7,27 @@
     <Grid Padding="1" RowSpacing="2" ColumnSpacing="3"
           RowDefinitions="2*,*,*,*,*,*"
           ColumnDefinitions="*,*,*,*,*">
+        <VerticalStackLayout Padding="30" Spacing="25">
+            <HorizontalStackLayout
+                HorizontalOptions="End"
+                IsVisible="true"
+                Spacing="8">
+                <Label Text="Theme" VerticalTextAlignment="Center" />
+                <RadioButton
+                    x:Name="lightThemeRadioButton"
+                    CheckedChanged="LightThemeRadioButton_CheckedChanged"
+                    Content="Light"
+                    GroupName="theme"
+                    MinimumWidthRequest="80" />
+                <RadioButton
+                    x:Name="darkThemeRadioButton"
+                    CheckedChanged="DarkThemeRadioButton_CheckedChanged"
+                    Content="Dark"
+                    GroupName="theme"
+                    MinimumWidthRequest="80" />
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+
 
         <Label x:Name="CurrentCalculation"
                FontSize="22"
